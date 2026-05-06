@@ -3,7 +3,7 @@ name: CI & Deploy
 on:
   push:
     branches:
-      - main
+    - main
 
 permissions:
   contents: write
@@ -14,33 +14,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+    - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node
+    - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 24
-          cache: 'npm'
+        node-version: 24
+        cache: 'npm'
 
-      - name: Check Node version
+    - name: Check Node version
         run: node -v && npm -v
 
-      - name: Install dependencies
+    - name: Install dependencies
         run: npm ci
 
-      - name: Run EditorConfig check
+    - name: Run EditorConfig check
         run: npm run editorconfig
 
-      - name: Run lint
+    - name: Run lint
         run: npm run lint
 
-      - name: Build project
+    - name: Build project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          folder: ./build
-          branch: gh-pages
+        token: ${{ secrets.GITHUB_TOKEN }}
+        folder: ./build
+        branch: gh-pages
