@@ -111,7 +111,7 @@ export function sprite() {
         .pipe(svgo())
         .pipe(svgstore({ inlineSvg: true }))
         .pipe(rename('sprite.svg'))
-        .pipe(gulp.dest('build/img'));
+        .pipe(gulp.dest('build/img/icons'));
 }
 
 
