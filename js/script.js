@@ -1,1 +1,1 @@
-console.log("JS подключен и работает.");
+const mainNav=document.querySelector(".main-nav");mainNav.classList.remove("main-nav--opened");const mainNavSubscription=document.querySelector(".main-nav__subscription"),mainNavToggle=document.querySelector(".main-nav__toggle");mainNavToggle.addEventListener("click",function(){mainNav.classList.toggle("main-nav--opened"),mainNav.classList.contains("main-nav--opened")?mainNavSubscription.textContent="Close site menu":mainNavSubscription.textContent="Open site menu"});
