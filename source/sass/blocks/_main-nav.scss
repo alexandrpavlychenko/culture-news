@@ -1,0 +1,178 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav__heading {
+    @media (min-width: var.$tablet-width) {
+        margin: 0 auto 20px;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        margin: 0 auto 34px;
+    }
+}
+
+.main-nav__heading-logo {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    padding: 5px;
+    max-width: 220px;
+
+    @include mix.font-logo;
+
+    @media (min-width: var.$tablet-width) {
+        margin: 0;
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        &:hover,
+        &:focus-visible {
+            color: var.$color-accent-hover;
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+}
+
+.main-nav__toggle {
+    position: relative;
+    z-index: 13;
+
+    display: block;
+    border: none;
+    width: 34px;
+    height: 34px;
+    padding: 5px;
+
+    background-color: transparent;
+
+    @media (min-width: var.$tablet-width) {
+        display: none;
+    }
+}
+
+.main-nav__burger {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 23px;
+    height: 3px;
+
+    background-color: var.$color-text-strong;
+    border: none;
+}
+
+.main-nav__burger::before {
+    content: "";
+
+    display: block;
+    width: 23px;
+    height: 3px;
+
+    background-color: var.$color-text-strong;
+    transform: translateY(-6px);
+}
+
+.main-nav__burger::after {
+    content: "";
+
+    display: block;
+    width: 23px;
+    height: 3px;
+
+    background-color: var.$color-text-strong;
+    transform: translateY(3px);
+}
+
+.main-nav--opened .main-nav__burger {
+    background-color: transparent;
+}
+
+.main-nav--opened .main-nav__burger::before {
+    position: absolute;
+    z-index: 1;
+
+    display: block;
+    width: 23px;
+    height: 3px;
+
+    transform: rotate(45deg);
+}
+
+.main-nav--opened .main-nav__burger::after {
+    position: absolute;
+    z-index: 1;
+
+    display: block;
+    width: 23px;
+    height: 3px;
+
+    transform: rotate(-45deg);
+}
+
+.main-nav__menu {
+    display: none;
+
+    @media (min-width: var.$tablet-width) {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 43px;
+        width: 100%;
+
+        @include mix.list-reset;
+    }
+}
+
+.main-nav--opened .main-nav__menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+
+    @include mix.list-reset;
+
+    padding: 0 0 30px;
+
+    text-align: center;
+
+    @media (min-width: var.$tablet-width) {
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 20px 0;
+        width: 100%;
+
+        @include mix.list-reset;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        column-gap: 43px;
+    }
+}
+
+.main-nav__menu-link {
+    display: inline-block;
+    padding: 10px;
+
+    @include mix.font-main-menu;
+
+    @media (min-width: var.$desktop-width) {
+        &:hover,
+        &:focus-visible {
+            color: var.$color-accent;
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+}

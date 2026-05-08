@@ -1,0 +1,63 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.season-tickets {
+    padding: 30px 0;
+
+    text-align: center;
+
+    background-color: var.$color-light-bg;
+
+    overflow: hidden;
+
+    @media (min-width: var.$tablet-width) {
+        padding: 33px 0 36px;
+    }
+}
+
+.season-tickets::after {
+    @media (min-width: var.$desktop-width) {
+        content: "";
+        position: absolute;
+
+        width: 707px;
+        height: 707px;
+
+        border-radius: 50%;
+        background-color: #ffffff;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+}
+
+.season-tickets__heading {
+    margin: 0 0 18px;
+
+    @include mix.font-section-heading;
+
+    text-align: center;
+
+    @media (min-width: var.$desktop-width) {
+        position: relative;
+        z-index: 1;
+
+        margin: 0 0 35px;
+    }
+}
+
+.season-tickets__list {
+    @media (min-width: var.$desktop-width) {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.season-tickets__button {
+    @media (min-width: var.$desktop-width) {
+        position: relative;
+        z-index: 1;
+    }
+}

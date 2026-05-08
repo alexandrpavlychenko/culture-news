@@ -1,0 +1,18 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.season-tickets-item {
+    padding: 0 0 35px;
+
+    text-align: center;
+}
+
+.season-tickets-item__heading {
+    margin: 0 0 9px;
+
+    @include mix.font-section-subheading;
+}
+
+.season-tickets-item__text {
+    margin: 0 0 14px;
+}

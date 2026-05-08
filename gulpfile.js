@@ -199,7 +199,7 @@ export function copyFavicons() {
 
 
 export function copyFonts() {
-    return gulp.src('source/fonts/**/*.{woff,woff2,ttf,otf}')
+    return gulp.src('source/fonts/**/*.{woff,woff2,ttf,otf}', { encoding: false })
         .pipe(gulp.dest('build/fonts'));
 }
 

@@ -1,0 +1,22 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.promo {
+    padding: 18px 0 0;
+
+    background-color: var.$color-alter-bg;
+
+    @media (min-width: var.$tablet-width) {
+        padding: 0;
+    }
+}
+
+.promo__main-content {
+    @media (min-width: var.$tablet-width) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+}

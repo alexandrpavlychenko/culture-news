@@ -1,0 +1,14 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.page-header {
+    padding: 20px 0;
+
+    @media (min-width: var.$tablet-width) {
+        padding: 40px 0;
+    }
+
+    @media (min-width: var.$desktop-width) {
+        padding: 55px 0 39px;
+    }
+}

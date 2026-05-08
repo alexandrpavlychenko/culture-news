@@ -1,0 +1,14 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.reviews-list {
+    @include mix.list-reset;
+
+    padding: 0 8px;
+
+    @media (min-width: var.$tablet-width) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(371px, 1fr));
+        gap: 25px;
+    }
+}

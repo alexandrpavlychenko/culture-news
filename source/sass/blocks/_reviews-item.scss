@@ -1,0 +1,58 @@
+@use "../global/variables.scss" as var;
+@use "../global/mixins.scss" as mix;
+
+.reviews-item__link {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews-item__heading {
+    margin: 22px 0 10px;
+
+    @include mix.font-section-subheading;
+
+    text-decoration: underline;
+
+    @media (min-width: var.$desktop-width) {
+        text-decoration: none;
+    }
+}
+
+.reviews-item__link:hover .reviews-item__heading,
+.reviews-item__link:focus-visible .reviews-item__heading {
+    @media (min-width: var.$desktop-width) {
+        color: var.$color-accent-hover;
+    }
+}
+
+.reviews-item__picture {
+    position: relative;
+
+    order: -1;
+}
+
+.reviews-item__picture::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    transition: opacity 0.3s ease;
+
+    opacity: 0;
+}
+
+.reviews-item__link:hover .reviews-item__picture::after,
+.reviews-item__link:focus-visible .reviews-item__picture::after {
+    @media (min-width: var.$desktop-width) {
+        opacity: 1;
+    }
+}
+
+.reviews-item__text {
+    margin: 0 0 14px;
+
+    color: var.$color-text-base;
+}
