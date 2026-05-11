@@ -10,16 +10,12 @@
 
 .page__body {
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr auto;
     margin: 0;
     min-width: 320px;
     min-height: 100dvh;
 
     @include mix.font-main-text;
-
-    @media (min-width: var.$tablet-width) {
-        grid-template-rows: auto 1fr auto;
-    }
 
     background-color: var.$color-basic-white;
 }
